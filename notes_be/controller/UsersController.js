@@ -85,23 +85,23 @@ export const Login = async (req, res) => {
 
 export const refreshToken = async (req, res) => {
   try {
-    // Cookie Validation
-    const refreshToken = req.cookies.refreshToken; // Sesuaikan nama cookie
-    if (!refreshToken) return res.sendStatus(401); // Unauthorized
+    
+    const refreshToken = req.cookies.refreshToken; 
+    if (!refreshToken) return res.sendStatus(401); 
 
-    // User Validation
+   
     const user = await Users.findOne({
       where: { refresh_token: refreshToken },
     });
     if (!user) return res.status(403).json({ message: "User tidak ditemukan" });
 
-    // Verify JWT
+    
     jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
       if (err) {
         return res.status(403).json({ message: "Invalid refresh token" });
       }
 
-      const { id, username } = user; // Pastikan data ini sesuai dengan payload JWT sebelumnya
+      const { id, username } = user; 
       const accessToken = jwt.sign(
         { id, username },
         process.env.ACCESS_TOKEN_SECRET,

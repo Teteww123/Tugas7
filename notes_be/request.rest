@@ -22,7 +22,7 @@ GET http://localhost:5000/token
 ###
 GET http://localhost:5000/notes
 Content-Type: application/json
-Authorization: Bereer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiIxMjMiLCJpYXQiOjE3NDgxNjA5MzgsImV4cCI6MTc0ODE2MDk2OH0.-kz3eXD35mlPOUSBfJ8UZpbNQLjjCXeSdTDmveV4FZk
+Authorization: Bereer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJNYWxpayIsImlhdCI6MTc0ODI2MDgyNiwiZXhwIjoxNzQ4MjYwODU2fQ.XJQbVO6VHxk1bVufRfmbdxA0IUDi4tuMCEIDyQI9j80
 
 {
   "title": "Test Ubah",

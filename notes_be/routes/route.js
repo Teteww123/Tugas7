@@ -15,13 +15,12 @@ import { verifyToken } from "../middleware/verifyToken.js";
 
 const router = express.Router();
 
-// User Routes
+
 router.post("/register", Register);
 router.post("/login", Login);
 router.get("/token", refreshToken);
 router.delete("/logout", logout);
 
-// Notes Routes
 router.get("/notes", verifyToken, getNotes);
 router.get("/notes/:id", verifyToken, getNotes);
 router.post("/add-note", verifyToken, createNotes);

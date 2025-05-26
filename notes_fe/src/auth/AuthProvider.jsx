@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
       const res = await axios.post(`${BASE_URL}/login`, { username, password });
       setAccessToken(res.data.accessToken);
 
-      // Simpan refresh token di cookie (default 1 hari)
+      
       Cookies.set("refreshToken", res.data.refreshToken, {
         secure: true,
         sameSite: "Strict",
