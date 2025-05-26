@@ -2,9 +2,9 @@ POST https://notes-backend-170-559917148272.us-central1.run.app/register
 Content-Type: application/json
 
 {
-    "username": "123",
-    "password": "123",
-    "confirm_password": "123"
+    "username": "Malik",
+    "password": "ikan",
+    "confirm_password": "ikan"
 }
 
 ###
@@ -12,8 +12,8 @@ POST https://notes-backend-170-559917148272.us-central1.run.app/login
 Content-Type: application/json
 
 {
-    "username": "123",
-    "password": "123"
+    "username": "Malik",
+    "password": "ikan"
 }
 
 ###
