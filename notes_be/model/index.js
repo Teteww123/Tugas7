@@ -2,11 +2,11 @@ import db from "../config/Database.js";
 import Users from "./UsersModel.js";
 import Notes from "./NotesModel.js";
 
-// Relasi
+
 Users.hasMany(Notes, { foreignKey: "userId", onDelete: "CASCADE" });
 Notes.belongsTo(Users, { foreignKey: "userId" });
 
-// Sinkronisasi semua tabel
+
 (async () => {
   try {
     await db.authenticate();

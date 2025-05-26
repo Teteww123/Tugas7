@@ -64,13 +64,13 @@ export const Login = async (req, res) => {
       { where: { id: user.id } }
     );
 
-    // Set Cookie
+   
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
       maxAge: 24 * 60 * 60 * 1000, // 1 day
     });
 
-    // Response
+    
     return res.status(200).json({
       accessToken,
       message: "Login berhasil",
@@ -95,13 +95,13 @@ export const refreshToken = async (req, res) => {
     });
     if (!user) return res.status(403).json({ message: "User tidak ditemukan" });
 
-    
+    // Verify JWT
     jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
       if (err) {
         return res.status(403).json({ message: "Invalid refresh token" });
       }
 
-      const { id, username } = user; 
+      const { id, username } = user; // Pastikan data ini sesuai dengan payload JWT sebelumnya
       const accessToken = jwt.sign(
         { id, username },
         process.env.ACCESS_TOKEN_SECRET,
