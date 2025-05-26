@@ -1,0 +1,30 @@
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+    "username": "123",
+    "password": "123",
+    "confirm_password": "123"
+}
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "username": "123",
+    "password": "123"
+}
+
+###
+GET http://localhost:5000/token
+
+###
+GET http://localhost:5000/notes
+Content-Type: application/json
+Authorization: Bereer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiIxMjMiLCJpYXQiOjE3NDgxNjA5MzgsImV4cCI6MTc0ODE2MDk2OH0.-kz3eXD35mlPOUSBfJ8UZpbNQLjjCXeSdTDmveV4FZk
+
+{
+  "title": "Test Ubah",
+  "content": "Ini"
+}
